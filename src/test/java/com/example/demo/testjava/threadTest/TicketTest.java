@@ -4,7 +4,9 @@ public class TicketTest extends Thread {
     TicketTest(String name){
         super((name));
     }
+    //可以设置成静态
     private static int ticketNum = 100;
+    @Override
     public void run() {
         while (true) {
             if(ticketNum>0) {
