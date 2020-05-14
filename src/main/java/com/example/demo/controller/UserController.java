@@ -48,14 +48,14 @@ public class UserController {
     @PostMapping()
     public ModelAndView delete(User user){
         user = userRepository.saveOrUpdateUser(user);
-        return new ModelAndView("redirect");
+        return new ModelAndView("redirect:/user/userlist");
     }
 
     //根据id删除用户
     @GetMapping(value ="delete/{id}")
     public ModelAndView delete(@RequestParam(value = "id")Long id){
         userRepository.deleteUsere(id);
-        return new ModelAndView("redirect:/user");
+        return new ModelAndView("redirect:/user/userlist");
     }
 
     //修改用户界面
