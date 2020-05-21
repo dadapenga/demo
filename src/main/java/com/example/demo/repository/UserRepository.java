@@ -2,10 +2,11 @@ package com.example.demo.repository;
 
 import com.example.demo.domain.User;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface UserRepository {
+public interface UserRepository extends CrudRepository<User,Long> {
     User saveOrUpdateUser(User user);//新增或者 修改用户
     void deleteUsere(Long id); //删除用户
     User getUserById(Long id); //根据用户id获取用户
